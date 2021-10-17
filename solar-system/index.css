@@ -35,7 +35,6 @@ body {
 
 .sun {
     --diameter: 150px;
-    --moveX: 0px;
     background-color: orange;
     position: absolute;
 }
