@@ -1,0 +1,82 @@
+/* 
+.spinner {
+    border: 8px solid grey;
+    border-top: 8px solid blue;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: 3s linear 0s infinite spinner;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+*/
+
+body {
+    height: 90vh;
+    position: absolute;
+    width: 90vw;
+}
+
+.planet {
+    width: var(--diameter);
+    height: var(--diameter);
+    top: calc(50% - var(--diameter)/2);
+    left: calc(50% - var(--diameter)/2);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.sun {
+    --diameter: 150px;
+    --moveX: 0px;
+    background-color: orange;
+    position: absolute;
+}
+
+.mercury {
+    --diameter: 15px;
+    --moveX: 200px;
+    background-color: red;
+    position: absolute;
+    animation: 4.5s linear 0s infinite spinn;
+}
+
+.venus {
+    --diameter: 20px;
+    --moveX: 240px;
+    background-color: grey;
+    position: absolute;
+    animation: 5.9s linear 0s infinite spinn;
+}
+
+.earth {
+    --diameter: 50px;
+    --moveX: 300px;
+    background-color: rgb(25, 207, 25);
+    position: absolute;
+    animation: 7s linear 0s infinite spinn;    
+}
+
+.mars {
+    --diameter: 25px;
+    --moveX: 380px;
+    background-color: maroon;
+    position: absolute;
+    animation: 6.6s linear 0s infinite spinn;
+}
+
+@keyframes spinn {
+    0% {
+        transform: rotate(0deg) translate( var( --moveX) );
+    }
+    100% {
+        transform: rotate(360deg) translate( var( --moveX) );
+    }
+}
