@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        svg {
+            border: 1px solid black;
+        }
+
+        .moveWaves {
+            animation: move 2s linear infinite;
+        }
+
+        @keyframes move {
+            from{
+                transform: translate(-100px);
+            }
+            to{
+                transform: translate(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Problem
+            create the following animation
+            use clip paths
+            use defs to create a path
+            reuse the path
+            add animation to the paths
+     -->
+
+
+    <svg width="97vw" height="97vh" viewBox="0 0 400 400">
+
+        <defs>
+            <polyline 
+                class="moveWaves"
+                points="100 200 150 150 150 150 200 200 200 200 250 150 250 150 300 200 300 200 350 150 350 150 400 200"
+                stroke="black"
+                stroke-width="3"
+                fill="none"
+                id="pathWave"
+            />
+        </defs>
+
+        <!-- Clip Path -->
+        <clipPath id="circle">
+            <circle cx="200" cy="200" r="100" fill="none"/>
+        </clipPath>
+        <circle cx="200" cy="200" r="100" fill="pink"/>
+        <g clip-path="url(#circle)">
+            <use href="#pathWave" x="0" y="-75" />
+            <use href="#pathWave" x="0" y="-50" />
+            <use href="#pathWave" x="0" y="-25" />
+            <use href="#pathWave" x="0" y="0" />
+            <use href="#pathWave" x="0" y="25" />
+            <use href="#pathWave" x="0" y="50" />
+            <use href="#pathWave" x="0" y="75" />
+            <use href="#pathWave" x="0" y="100" />
+            <use href="#pathWave" x="0" y="125" />
+        </g>
+    </svg>
+
+</body>
+
+</html>
